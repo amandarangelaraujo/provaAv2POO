@@ -21,6 +21,10 @@ public class App {
         LocadoraDeVeiculos localiza = new LocadoraDeVeiculos(vetorVeiculos);
         System.out.println(localiza.somaTodos());
 
+
+        //testando o upcasting e o downcasting
+        LocadoraDeVeiculos.quantidadeCarrosEMotos(vetorVeiculos);;
+
         
     }
 }

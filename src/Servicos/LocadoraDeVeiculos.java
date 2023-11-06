@@ -14,6 +14,7 @@ public class LocadoraDeVeiculos implements Locadora {
     @Override
     public double venderVeiculo(int indiceVetor){
         if(veiculos[indiceVetor] instanceof Carro){
+            //downcasting, fazendo um veiculo se tornar um carro
             Carro carro = (Carro) veiculos[indiceVetor] ;
             if(carro.getKmRodados()>15000 && carro.getQuantidadePortas()>2){
                 return carro.getPrecoCompra() + carro.getPrecoCompra()*140/100;
@@ -22,6 +23,7 @@ public class LocadoraDeVeiculos implements Locadora {
                 return carro.getPrecoCompra() + carro.getPrecoCompra()*115/100;
             }
         }else{
+            //downcasting
             Moto moto = (Moto) veiculos[indiceVetor];
             if(moto.getKmRodados()<8000 || moto.getTipoMoto().equals("ESPORTIVA")){
                 return moto.getPrecoCompra() + moto.getPrecoCompra()*160/100;
@@ -48,5 +50,20 @@ public class LocadoraDeVeiculos implements Locadora {
         else{
             return quantidadeDias * 65;
         }
+    }
+
+    public static void quantidadeCarrosEMotos(Veiculo[] veiculos){
+        int quantidadeCarros = 0;
+        int quantidadeMotos = 0;
+        for (int i = 0; i<veiculos.length; i++){
+            if(veiculos[i] instanceof Carro){
+                quantidadeCarros++;
+            }
+            else{
+                quantidadeMotos++;
+            }
+        }
+        System.out.println("Quantidade de carros: " + quantidadeCarros);
+        System.out.println("Quantidade de motos: " + quantidadeMotos);
     }
 }
