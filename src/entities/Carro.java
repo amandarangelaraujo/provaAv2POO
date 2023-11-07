@@ -4,9 +4,6 @@ public class Carro extends Veiculo {
 
     protected int quantidadePortas;
     
-    public Carro(double precoCompra, int kmRodados) {
-        super(precoCompra, kmRodados);
-    }
 
     public Carro(double precoCompra, int kmRodados, int quantidadePortas) {
         super(precoCompra, kmRodados);

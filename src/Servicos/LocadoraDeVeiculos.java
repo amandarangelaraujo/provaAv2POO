@@ -17,19 +17,19 @@ public class LocadoraDeVeiculos implements Locadora {
             //downcasting, fazendo um veiculo se tornar um carro
             Carro carro = (Carro) veiculos[indiceVetor] ;
             if(carro.getKmRodados()>15000 && carro.getQuantidadePortas()>2){
-                return carro.getPrecoCompra() + carro.getPrecoCompra()*140/100;
+                return carro.getPrecoCompra()*140/100;
 
             }else{
-                return carro.getPrecoCompra() + carro.getPrecoCompra()*115/100;
+                return carro.getPrecoCompra()*115/100;
             }
         }else{
             //downcasting
             Moto moto = (Moto) veiculos[indiceVetor];
             if(moto.getKmRodados()<8000 || moto.getTipoMoto().equals("ESPORTIVA")){
-                return moto.getPrecoCompra() + moto.getPrecoCompra()*160/100;
+                return moto.getPrecoCompra()*160/100;
             }
             else{
-                return moto.getPrecoCompra() + moto.getPrecoCompra()*110/100;
+                return moto.getPrecoCompra()*110/100;
             }
         }  
     }
